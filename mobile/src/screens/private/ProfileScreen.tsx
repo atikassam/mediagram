@@ -1,7 +1,9 @@
-import {Box, Text} from "@gluestack-ui/themed";
+import { Box, Text } from '@gluestack-ui/themed';
 
-export default function SearchScreen() {
-    return <Box width="100%" justifyContent="center" alignItems="center" flex={1}>
-        <Text>ProfileEditScreen</Text>
+export default function ProfileScreen() {
+  return (
+    <Box width="100%" justifyContent="center" alignItems="center" flex={1}>
+      <Text>ProfileScreen</Text>
     </Box>
+  );
 }
