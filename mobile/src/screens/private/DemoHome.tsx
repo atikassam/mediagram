@@ -3,8 +3,11 @@ import { Button, ButtonText, VStack } from '@gluestack-ui/themed';
 import { Box, Text, View } from '@gluestack-ui/themed';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { useCustomTheme } from '../../hooks/useCustomTheme';
 const DemoHome = () => {
   const navigation = useNavigation<any>();
+  const { colorMode, toggleColorMode } = useCustomTheme();
+
   return (
     <VStack
       space="sm"
@@ -13,6 +16,24 @@ const DemoHome = () => {
       alignItems="center"
       flex={1}
     >
+      <Button
+        action={'primary'}
+        variant={'solid'}
+        size={'lg'}
+        isDisabled={false}
+        onPress={() => navigation.navigate('AuthorizationScreen')}
+      >
+        <ButtonText>AuthorizationScreen</ButtonText>
+      </Button>
+      <Button
+        action={'primary'}
+        variant={'solid'}
+        size={'lg'}
+        isDisabled={false}
+        onPress={() => navigation.navigate('ReAuthorizationScreen')}
+      >
+        <ButtonText>ReAuthorizationScreen</ButtonText>
+      </Button>
       <Button
         action={'primary'}
         variant={'solid'}
@@ -129,6 +150,15 @@ const DemoHome = () => {
         onPress={() => navigation.navigate('TemplateScreen')}
       >
         <ButtonText>TemplateScreen</ButtonText>
+      </Button>
+      <Button
+        action={'primary'}
+        variant={'solid'}
+        size={'lg'}
+        isDisabled={false}
+        onPress={toggleColorMode}
+      >
+        <ButtonText>Change Theme</ButtonText>
       </Button>
     </VStack>
   );
