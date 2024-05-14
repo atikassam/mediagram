@@ -17,6 +17,7 @@ import ScreenPics from './screens/private/ScreenPics';
 import StoryScreen from './screens/private/StoryScreen';
 import TemplateScreen from './screens/private/TemplateScreen';
 import DemoHome from './screens/private/DemoHome';
+import MainScreen from './screens/private/MainScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -61,6 +62,15 @@ export const SecureNavigation = () => {
       <Stack.Screen name="StoryScreen" component={StoryScreen} />
       <Stack.Screen name="DemoHome" component={DemoHome} />
       <Stack.Screen name="TemplateScreen" component={TemplateScreen} />
+      <Stack.Screen
+        name="AuthorizationScreen"
+        component={AuthorizationScreen}
+      />
+      <Stack.Screen
+        name="ReAuthorizationScreen"
+        component={ReAuthorizationScreen}
+      />
+      <Stack.Screen name="MainScreen" component={MainScreen} />
     </Stack.Navigator>
   );
 };
